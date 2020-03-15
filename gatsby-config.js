@@ -27,6 +27,18 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: "gatsby-source-sanity",
+      options: {
+        projectId: process.env.GATSBY_SANITY_PROJECT_ID,
+        dataset: process.env.GATSBY_SANITY_DATASET,
+        token: process.env.GATSBY_SANITY_TOKEN,
+
+        // If the Sanity GraphQL API was deployed using `--tag <name>`,
+        // use `graphqlTag` to specify the tag name. Defaults to `default`.
+        graphqlTag: "default",
+      },
+    },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
